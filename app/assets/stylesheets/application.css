@@ -19,3 +19,16 @@
     font-weight: normal;
     float: right;
 }
+
+.container{
+    width: 400px;
+    margin: 20px auto;
+}
+body{
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+ul > li {
+    margin-bottom: 5px;
+}
