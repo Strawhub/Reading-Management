@@ -32,3 +32,9 @@ body{
 ul > li {
     margin-bottom: 5px;
 }
+
+.backhome{
+    width: 100px;
+    height: 20px;
+    text-align: left;
+}
