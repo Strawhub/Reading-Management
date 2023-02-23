@@ -44,3 +44,7 @@ input[type="text"],textarea{
     width: 400px;
     padding: 5px;
 }
+
+textarea{
+    height: 160px;
+}
