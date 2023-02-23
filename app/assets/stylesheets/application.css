@@ -38,3 +38,9 @@ ul > li {
     height: 20px;
     text-align: left;
 }
+
+input[type="text"],textarea{
+    box-sizing: border-box;
+    width: 400px;
+    padding: 5px;
+}
