@@ -13,13 +13,17 @@ class BooksController < ApplicationController
     end
 
     def create
-    @book = Book.new(book_params)
-    @book.save
-    # redirect
-    redirect_to books_path
+        @book = Book.new(book_params)
+        if @book.save
+            # redirect
+            redirect_to books_path
+        else
+            # render 'new'
+            render plain: @book.errors.inspect
+        end
     end
     private
-    def book_params
-        params.require(:book).permit(:title, :description)
-    end
+        def book_params
+            params.require(:book).permit(:title, :description)
+        end
 end
