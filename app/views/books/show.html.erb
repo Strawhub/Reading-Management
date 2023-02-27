@@ -6,7 +6,7 @@
 <ul>
 <% @book.comments.each do |comment| %>
 <li>
-    <%= comment.body %>
+    <%= comment.description %>
     <%= link_to "delete", book_comment_path(@book, comment), 
     data: { turbo_method: :delete, turbo_confirm: 'Sure?'}%>
 </li>

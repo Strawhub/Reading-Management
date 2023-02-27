@@ -18,8 +18,7 @@ class BooksController < ApplicationController
             # redirect
             redirect_to books_path
         else
-            # render 'new'
-            render plain: @book.errors.inspect
+            render 'new'
         end
     end
 
