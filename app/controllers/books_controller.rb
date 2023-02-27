@@ -22,6 +22,10 @@ class BooksController < ApplicationController
             render plain: @book.errors.inspect
         end
     end
+
+    def edit
+        @book = Book.find(params[:id])
+    end
     private
         def book_params
             params.require(:book).permit(:title, :description)
