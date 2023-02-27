@@ -1,18 +1,2 @@
 <h1>Add New book</h1>
-<%= form_for :book, url: books_path do |f| %>
-<p>
-    <%= f.text_field :title, placeholder: 'enter title' %>
-    <% if @book.errors.messages[:title].any? %>
-    <span class="error"><%= @book.errors.messages[:title][0] %></span>
-    <% end %>
-</p>
-<p>
-    <%= f.text_area :description, placeholder: 'enter body text' %>
-    <% if @book.errors.messages[:description].any? %>
-    <span class="error"><%= @book.errors.messages[:description][0] %></span>
-    <% end %>
-</p>
-<p>
-    <%= f.submit %>
-</p>
-<% end %>
+<% render 'form'%>
