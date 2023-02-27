@@ -1,4 +1,4 @@
-<%= form_for :book, url: books_path do |f| %>
+<%= form_for @book do |f| %>
 <p>
     <%= f.text_field :title, placeholder: 'enter title' %>
     <% if @book.errors.messages[:title].any? %>
