@@ -24,6 +24,7 @@ class BooksController < ApplicationController
 
     def edit
         @book = Book.find(params[:id])
+        @book = Book.all
     end
 
     def update
@@ -33,6 +34,11 @@ class BooksController < ApplicationController
         else
             render 'edit'
         end
+    end
+
+    def search
+        @books = Book.where(params[:search])
+        render :edit
     end
 
     def destroy

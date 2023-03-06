@@ -1,2 +1,6 @@
+<%= form_tag books_path, method: :get do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search books",class: 'search-menu'%>
+<%= submit_tag "Search", name: nil, class: 'search-menu'%>
+<% end %>
 <h1>Add New book</h1>
-<% render 'form'%>
+<%= render 'form'%>
