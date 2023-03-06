@@ -20,6 +20,12 @@
     float: right;
 }
 
+.search-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
 .container{
     width: 400px;
     margin: 20px auto;
