@@ -9,7 +9,7 @@ class BooksController < ApplicationController
     end
 
     def new
-        @book = Book.new
+        @book = Book.new(title: params[:title])
     end
 
     def create
@@ -36,10 +36,21 @@ class BooksController < ApplicationController
         end
     end
 
+    require 'net/https'
+    require 'json'
+    require 'uri'
+
     def search
-        @books = Book.where(params[:search])
-        render :edit
+        if params[:title]
+            uri = URI.parse("https://www.googleapis.com/books/v1/volumes?q=#{URI.encode_www_form_component(params[:title])}")
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
+            response = http.get(uri.request_uri)
+            @result = JSON.parse(response.body)
+        end
+    render layout: false
     end
+    
 
     def destroy
         @book = Book.find(params[:id])
