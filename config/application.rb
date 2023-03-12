@@ -12,7 +12,7 @@ module ReadingManagement
     config.load_defaults 7.0
 
     # デプロイするサービスのホストを追加する
-    config.hosts << 'https://reading-management.onrender.com'
+    config.hosts << 'reading-management.onrender.com'
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
