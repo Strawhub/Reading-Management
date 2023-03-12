@@ -1,0 +1,12 @@
+<%= form_tag search_books_path, method: :get, remote: true do %>
+    <%= text_field_tag :title, params[:title], placeholder: "Enter book title" %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<% if @result.present? %>
+    <% @result['items'].each do |item| %>
+    <div class="search-result">
+        <%= link_to item['volumeInfo']['title'], new_book_path(title: item['volumeInfo']['title']) %>
+    </div>
+    <% end %>
+<% end %>
