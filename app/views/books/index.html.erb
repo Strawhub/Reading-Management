@@ -1,5 +1,5 @@
 <h1>Reading Management</h1>
-<%= link_to 'Add New', new_book_path, class: 'header-menu' %>
+<%= link_to 'Add New', search_books_path, class: 'header-menu' %>
 <ul>
 <% @books.each do |book| %>
 <li><%= link_to book.title, book_path(book) %>
