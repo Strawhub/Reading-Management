@@ -1,12 +1,12 @@
 databases:
-  - name: reading
-    databaseName: books_1mj3
-    user: straw
+  - name: reading_DB
+    databaseName: reading_db
+    user: Reading-Management
     region: singapore
 
 services:
   - type: web
-    name: rails7-sample-staging
+    name: Reading-Management
     env: ruby
     region: singapore
     plan: free
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: rails7_sample_staging
+          name: reading_DB
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
