@@ -1,10 +1,7 @@
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  dapper: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: <%= ENV["PASSWORD"] %>
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -19,5 +16,6 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  url: <%= ENV['READING_MANAGEMENT_DATABASE_PASSWORD'] %>
+  database: READING_MANAGEMENT_DATABASE_production
+  username: straw
+  password: <%= ENV['READING_MANAGEMENT_DATABASE_PASSWORD'] %>
