@@ -16,6 +16,9 @@ test:
 
 production:
   <<: *default
-  database: READING_MANAGEMENT_DATABASE_production
+  adapter: postgresql
+  encoding: unicode
+  database: reading
+  pool: 5
   username: straw
   password: <%= ENV['READING_MANAGEMENT_DATABASE_PASSWORD'] %>
