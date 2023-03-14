@@ -52,4 +52,4 @@ production:
   <<: *default
   database: Reading_Management_production
   username: Reading_Management
-  password: <%= ENV["READING_MANAGEMENT_DATABASE_PASSWORD"] %>
+  url: <%= ENV["READING_MANAGEMENT_DATABASE_PASSWORD"] %>
