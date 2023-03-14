@@ -16,6 +16,6 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  password: <%= ENV['READING_MANAGEMENT_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  database: Reading_Management_production
+  username: Reading_Management
+  url: <%= ENV["READING_MANAGEMENT_DATABASE_PASSWORD"] %>
