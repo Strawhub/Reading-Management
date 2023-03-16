@@ -13,7 +13,7 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
+      - key: READING_MANAGEMENT_DATABASE_PASSWORD
         fromDatabase:
           name: reading_DB
           property: connectionString
