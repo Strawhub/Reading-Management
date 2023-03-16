@@ -7,15 +7,17 @@ development:
   <<: *default
   database: Reading_Management_development
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: Reading_Management_test
 
 production:
   <<: *default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  timeout: 5000
   database: Reading_Management_production
   username: Reading_Management
   url: <%= ENV["READING_MANAGEMENT_DATABASE_PASSWORD"] %>
+
