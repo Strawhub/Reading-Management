@@ -17,7 +17,7 @@ production:
   encoding: utf8
   pool: 5
   timeout: 5000
-  database: Reading_Management_production
-  username: Reading_Management
+  database: books
+  username: reading_db_user
   url: <%= ENV["READING_MANAGEMENT_DATABASE_PASSWORD"] %>
 
