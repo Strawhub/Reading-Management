@@ -10,7 +10,7 @@ services:
     env: ruby
     region: singapore
     plan: free
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "./render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: READING_MANAGEMENT_DATABASE_PASSWORD
