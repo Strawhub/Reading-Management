@@ -17,5 +17,4 @@ test:
 production:
   <<: *default
   database: management_production
-  username: root
-  url: <%= ENV["READING_MANAGEMENT_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
