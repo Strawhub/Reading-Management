@@ -13,9 +13,9 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
+      - key: <%= ENV['DATABASE_URL'] %>
         fromDatabase:
           name: reading_DB
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: <%= ENV['RAILS_MASTER_KEY'] %>
         sync: false
