@@ -16,4 +16,5 @@ test:
 
 production:
   <<: *default
+  database: reading_DB
   url: <%= ENV["DATABASE_URL"] %>
