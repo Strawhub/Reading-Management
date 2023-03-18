@@ -5,6 +5,7 @@ default: &default
   username: root
   password: <%= ENV['PASSWORD'] %>
   host: localhost
+  port: 5432
 
 development:
   <<: *default
@@ -17,4 +18,4 @@ test:
 production:
   <<: *default
   database: reading_DB
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV['DATABASE_URL'] %>
