@@ -17,10 +17,10 @@
 <% end %>
 <%= form_for ([@book, @book.comments.build]) do |f| %>
 <p>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, placeholder: 'コメントを入力'%>
 </p>
 <p>
-    <%= f.number_field :pages %>
+    <%= f.number_field :pages, placeholder: 'ページ数を入力'%>
 </p>
 <p>
     <%= f.submit %>
