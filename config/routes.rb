@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   # root "books#index"
   root "users#new"
+  resources :users
 end
