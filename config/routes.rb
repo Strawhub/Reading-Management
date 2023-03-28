@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  # root "books#index"
-  root "users#new"
+  root "books#index"
+  # root "users#new"
   resources :users
 end
