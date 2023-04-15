@@ -1,17 +1,14 @@
 <h1>Add New Page</h1>
-<%= form_with(model: @book, local: true) do |form| %>
+<%= form_with(model: [@user, @book], url: user_books_path,remote: false ) do |form| %>
 <%= form.label :title %>
-<%= form.text_field :title, id: 'book_title' %>
+<%= form.text_field :title, id: 'book_title' , value: params[:title]%>
 
-<%= form_for @book do |f| %>
-<p>
-    <%= f.text_area :description, placeholder: 'enter body text' %>
-    <% if @book.errors.messages[:description].any? %>
+<%= form.text_area :description, placeholder: 'enter body text' %>
+<% if @book.errors.messages[:description].any? %>
     <span class="error"><%= @book.errors.messages[:description][0] %></span>
-    <% end %>
-</p>
-<p>
-    <%= f.submit %>
-</p>
 <% end %>
+<%= form.submit %>
 <% end %>
+
+
+

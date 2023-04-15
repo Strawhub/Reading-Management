@@ -1,2 +1,4 @@
 <% provide(:title, @user.name) %>
 <h1><%= gravatar_for @user %><%= @user.name %></h1>
+
+<%= link_to 'Books Page', user_books_path(@user, @books)%>

@@ -1,7 +1,7 @@
 <h1>Edit Page</h1>
 <%= @book.title %>
 
-<%= form_for @book do |f| %>
+<%= form_with(model: [@user, @book], url: user_book_path) do |f| %>
 <p>
     <%= f.text_area :description, placeholder: 'enter body text' %>
     <% if @book.errors.messages[:description].any? %>

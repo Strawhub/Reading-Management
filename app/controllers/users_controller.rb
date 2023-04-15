@@ -8,13 +8,15 @@ class UsersController < ApplicationController
     end
 
     def create
-    @user = User.new(user_params)
-    if @user.save
-        redirect_to books_path
-        # 保存の成功をここで扱う。
-    else
-        render 'new', status: :unprocessable_entity
-    end
+        @user = User.new(user_params)
+        if @user.save
+            reset_session
+            log_in @user
+            flash[:success] = "Welcome to the Sample App!"
+            redirect_to @user
+        else
+            render 'new', status: :unprocessable_entity
+        end
     end
 
     private
@@ -24,3 +26,5 @@ class UsersController < ApplicationController
                                     :password_confirmation)
     end
 end
+
+

@@ -9,13 +9,14 @@
 <li>
     <%= comment.description %>
     P<%= comment.pages %>
-    <%= link_to "delete", book_comment_path(@book, comment), 
+    <%= link_to "delete", user_book_comment_path(@book, comment), 
     data: { turbo_method: :delete, turbo_confirm: 'Sure?'}%>
 </li>
 <% end %>
 </ul>
 <% end %>
-<%= form_for ([@book, @book.comments.build]) do |f| %>
+<%= form_with(moddel: [@book, @book.comments.build]) do |f| %>
+
 <p>
     <%= f.text_field :description, placeholder: 'コメントを入力'%>
 </p>

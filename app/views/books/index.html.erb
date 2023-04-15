@@ -1,10 +1,10 @@
 <h1>Reading Management</h1>
-<%= link_to 'Add New', search_books_path, class: 'header-menu' %>
+<%= link_to 'Add New', search_user_books_path, class: 'header-menu' %>
 <ul>
 <% @books.each do |book| %>
-<li><%= link_to book.title, book_path(book) %>
-<%= link_to '[edit]', edit_book_path(book), class: 'command' %>
-<%= link_to "delete", book_path(book), 
+<li><%= link_to book.title, user_book_path(user_id: params[:user_id], id: book.id) %>
+<%= link_to '[edit]', edit_user_book_path(user_id: params[:user_id], id: book.id), class: 'command' %>
+<%= link_to "delete", user_book_path(user_id: params[:user_id], id: book.id), 
 data: { turbo_method: :delete, turbo_confirm: 'Sure?'}%>
 </li>
 <% end %>
