@@ -17,5 +17,5 @@ test:
 
 production:
   <<: *default
-  database: reading_DB
+  database: reading_db_cf35
   url: <%= ENV['DATABASE_URL'] %>
