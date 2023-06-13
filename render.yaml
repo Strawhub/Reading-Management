@@ -1,12 +1,12 @@
 databases:
   - name: reading_DB
-    databaseName: reading_db
+    databaseName: reading_db_cf35
     user: reading_db_user
     region: singapore
 
 services:
   - type: web
-    name: reading_DB
+    name: Reading-Management
     env: ruby
     region: singapore
     plan: free
