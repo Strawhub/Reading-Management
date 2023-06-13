@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-    @import "bootstrap-sprockets";
-    @import "bootstrap";
+    /* @import "bootstrap-sprockets";
+    @import "bootstrap"; */
 
 .header-menu{
     font-size: 20px;
