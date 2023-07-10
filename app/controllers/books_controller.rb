@@ -47,7 +47,6 @@ class BooksController < ApplicationController
             response = http.get(uri.request_uri)
             @result = JSON.parse(response.body)
         end
-    render layout: false
     end
     
 
