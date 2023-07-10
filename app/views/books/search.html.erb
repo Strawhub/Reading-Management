@@ -3,10 +3,18 @@
     <%= submit_tag "Search" %>
 <% end %>
 
-<% if @result.present? && @result['items'].present? %>
-    <% @result['items'].each do |item| %>
-    <div class="search-result">
-        <%= link_to item['volumeInfo']['title'], new_book_path(title: item['volumeInfo']['title']) %>
-    </div>
+<% if @result.present? %>
+    <% if @result['items'].present? %>
+        <% @result['items'].each do |item| %>
+        <div class="search-result">
+                <%= link_to item['volumeInfo']['title'], new_book_path(title: item['volumeInfo']['title']) %>
+        </div>
+        <% end %>
+    <% else %>
+        <div class="search-result">
+            <script>
+                alert("Please enter a book title.");
+            </script>
+        </div>
     <% end %>
 <% end %>
